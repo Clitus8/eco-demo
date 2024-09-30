@@ -1,0 +1,177 @@
+/* Centered Container */
+.center-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Product Card Styling */
+.product-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .product-image img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+
+    h2 {
+        font-size: 24px;
+        font-weight: bold;
+        margin: 10px 0;
+        color: #333;
+    }
+
+    .description {
+        font-size: 16px;
+        color: #777;
+        margin-bottom: 10px;
+    }
+
+    .price {
+        font-size: 20px;
+        font-weight: bold;
+        color: #007bff;
+        margin-top: 10px;
+    }
+
+    .category {
+        font-size: 16px;
+        color: #555;
+        margin-top: 10px;
+    }
+
+    .heart-icon {
+        font-size: 24px;
+        color: #ff4081;
+        cursor: pointer;
+        margin-top: 10px;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: #ff79a9;
+        }
+    }
+}
+
+// /* Review List */
+// .review-list {
+//     margin-top: 30px;
+// }
+
+// .review-card {
+//     background-color: #fff;
+//     border: 1px solid #e0e0e0;
+//     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+//     border-radius: 10px;
+//     margin-bottom: 20px;
+//     padding: 20px;
+//     display: flex;
+//     transition: box-shadow 0.3s ease;
+
+//     &:hover {
+//         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+//     }
+
+//     .review-image img {
+//         max-width: 100%;
+//         height: auto;
+//         border-radius: 8px;
+//     }
+
+//     h2 {
+//         font-size: 20px;
+//         font-weight: bold;
+//         margin: 10px 0;
+//         color: #333;
+//     }
+
+//     .details-row {
+//         display: flex;
+//         justify-content: space-between;
+//         margin-top: 10px;
+
+//         .rating,
+//         .username {
+//             font-size: 16px;
+//             color: #555;
+//         }
+//     }
+// }
+
+// /* FAQ Section */
+// .faq-list {
+//     margin-top: 30px;
+// }
+
+// .faq-card {
+//     background-color: #fff;
+//     border: 1px solid #e0e0e0;
+//     border-radius: 10px;
+//     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+//     margin-bottom: 20px;
+//     padding: 20px;
+//     transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+//     &:hover {
+//         transform: translateY(-5px);
+//         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+//     }
+
+//     .details-row {
+//         display: flex;
+//         justify-content: space-between;
+//     }
+
+//     .question,
+//     .answer {
+//         font-size: 16px;
+//         color: #333;
+//         margin-top: 10px;
+//     }
+
+//     .question {
+//         font-weight: bold;
+//         margin-bottom: 5px;
+//     }
+
+//     .question-text,
+//     .answer-text {
+//         margin-left: 20px;
+//     }
+// }
+
+/* Section Heading */
+.section-heading {
+    font-size: 26px;
+    font-weight: bold;
+    margin: 20px 0;
+    color: #333;
+    text-align: center;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+/* Small Image Styling */
+.small-image {
+    max-width: 80px;
+    max-height: 60px;
+    border-radius: 4px;
+}

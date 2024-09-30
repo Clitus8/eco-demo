@@ -1,0 +1,72 @@
+// Desktop and tablet styles
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(90deg, #4b63eb, #1a3fbb); // Gradient background
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); // Subtle shadow for depth
+    border-radius: 8px; // Rounded corners
+  
+    button {
+      color: white;
+      text-transform: uppercase;
+      margin-left: 8px;
+      padding: 10px 16px; // Add padding for buttons
+      border: none; // Remove default border
+      border-radius: 4px; // Rounded corners for buttons
+      transition: background-color 0.3s, color 0.3s;
+  
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.2); // Light hover effect
+        color: #ffd700; // Gold text on hover
+      }
+  
+      &.active {
+        font-weight: 600;
+        border-bottom: 2px solid white; // Optional underline for active button
+      }
+    }
+  }
+  
+  .navbar-brand {
+    font-size: 20px;
+    font-weight: 600;
+    margin-right: 16px;
+    color: white;
+    cursor: pointer; // Make brand clickable
+    transition: color 0.3s;
+  
+    &:hover {
+      color: #ffd700; // Change color on hover
+    }
+  }
+  
+  .spacer {
+    flex: 1;
+  }
+  
+  .custom-toolbar {
+    background-color: #ff0000;
+  }
+  
+  // Mobile styles
+  @media (max-width: 50px) {
+    .navbar {
+      flex-direction: column; 
+      padding: 10px; 
+      border-radius: 0; 
+    }
+  
+    .navbar-brand {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+  
+    button {
+      padding: 8px 12px;
+      margin-left: 0; 
+      margin-bottom: 8px;
+      width: 100%; 
+    }
+  }
+  

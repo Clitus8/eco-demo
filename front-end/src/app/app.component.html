@@ -1,0 +1,30 @@
+<div *ngIf="!isCustomerLoggedIn && !isAdminLoggedIn">
+  <mat-toolbar class="navbar" color="primary">
+    <span class="navbar-brand" style="cursor: pointer;" routerLink="/">AT-SHOP</span>
+    <span class="spacer"></span>
+    <button mat-button routerLink="/signup" routerLinkActive="active">Register</button>
+    <button mat-button routerLink="/login" routerLinkActive="active">Login</button>
+  </mat-toolbar>
+</div>
+
+<div *ngIf="isAdminLoggedIn">
+  <mat-toolbar class="navbar" color="primary">
+    <span class="navbar-brand" style="cursor: pointer;" (click)="navigateToDashboard()">AT-SHOP</span>
+    <span class="spacer"></span>
+    <button mat-button routerLink="/admin/dashboard" routerLinkActive="active">Dashboard</button>
+    <button mat-button routerLink="/admin/category" routerLinkActive="active">Category</button>
+    <button mat-button routerLink="/admin/product" routerLinkActive="active">Product</button>
+    <button mat-button routerLinkActive="active" (click)="logout()">Logout</button>
+  </mat-toolbar>
+</div>
+
+<div *ngIf="isCustomerLoggedIn">
+  <mat-toolbar class="navbar" color="primary">
+    <span class="navbar-brand" style="cursor: pointer;" (click)="navigateToDashboard()">AT-SHOP</span>
+    <span class="spacer"></span>
+    <button mat-button routerLink="/customer/dashboard" routerLinkActive="active">Dashboard</button>
+    <button mat-button routerLinkActive="active" (click)="logout()">Logout</button>
+  </mat-toolbar>
+</div>
+
+<router-outlet></router-outlet>
