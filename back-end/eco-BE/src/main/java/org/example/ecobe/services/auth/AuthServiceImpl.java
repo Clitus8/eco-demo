@@ -56,7 +56,7 @@ public class AuthServiceImpl implements AuthService {
             log.info("Admin account created with email: admin@gmail.com and password: admin");
             userRepository.save(
                     User.builder()
-                            .email("admin@test.com")
+                            .email("admin@gmail.com")
                             .name("admin")
                             .role(UserRole.ADMIN)
                             .password(bEncoder.encode("admin"))
