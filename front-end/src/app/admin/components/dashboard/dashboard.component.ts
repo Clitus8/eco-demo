@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { AdminService } from '../../service/admin.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { saveAs } from 'file-saver';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -11,6 +13,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class DashboardComponent {
   products: any[] = [];
   searchProductForm!: FormGroup;
+  http: any;
 
   constructor(private adminService: AdminService,
     private fb: FormBuilder,
@@ -60,6 +63,21 @@ export class DashboardComponent {
     })
   }
 
-
+  exportUsersPdf() {
+    this.adminService.generateReport().subscribe({
+      next: (response) => {
+        const blob = new Blob([response], { type: 'application/pdf' });
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'users_report.pdf';
+        a.click();
+        window.URL.revokeObjectURL(url); // Clean up the URL
+      },
+      error: (err) => {
+        console.error('Error generating report:', err);
+      }
+    });
+  }
 
 }

@@ -59,18 +59,18 @@ deleteProduct(productId: any): Observable<any> {
 
 
 
-  // POST METHOD
-
   addCategory(categoryDto: any): Observable<any> {
     return this.http.post(BASIC_URL + `api/admin/category`, categoryDto,{headers: this.createAuthorizationHeader()})    
   }
 
 
-  // PUT METHOD
 
   updateProduct(productId: number, productDto: any): Observable<any> {
     return this.http.put(BASIC_URL + `api/admin/${productId}`, productDto,{headers: this.createAuthorizationHeader()})
 
+  }
+  generateReport(): Observable<Blob> {
+    return this.http.get(BASIC_URL + 'api/admin/report', { responseType: 'blob' });
   }
 
    private createAuthorizationHeader(): HttpHeaders {

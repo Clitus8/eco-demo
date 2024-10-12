@@ -13,6 +13,7 @@ const routes: Routes = [
   {path: 'product', component: PostProductComponent},
   {path: 'product/:productId', component: UpdateProductComponent},
 
+
 ];
 
 @NgModule({

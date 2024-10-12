@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -15,9 +15,14 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatIcon, MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { KeycloakService } from './services/keycloak/keycloak.service';
+
+export function kcFactory(keycloakService: KeycloakService) {
+  return () => keycloakService.init();
+}
 
 @NgModule({
   declarations: [
@@ -45,7 +50,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
   ],
   providers: [
     provideClientHydration(),
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    
   ],
   bootstrap: [AppComponent]
 })
