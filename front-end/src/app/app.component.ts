@@ -34,6 +34,11 @@ isAdminLoggedIn: boolean = UserStorageService.isAdminLoggedIn();
     UserStorageService.signOut();
     this.router.navigateByUrl('/login');
   }
+
+  isDesktop(): boolean {
+    return window.innerWidth > 768; // Adjust threshold as needed
+  }
+
   navigateToDashboard() {
     if (this.isAdminLoggedIn) {
       this.router.navigate(['/admin/dashboard']);
